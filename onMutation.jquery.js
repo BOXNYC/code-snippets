@@ -7,8 +7,8 @@
             for(var mutation of mutationsList) {
               if (typeof config[mutation.type] !== typeof undefined && config[mutation.type] !== null) {
                 switch(mutation.type) {
-                  case 'childList' : fn.call(targetNode, mutation); break;
                   case 'attributes' : fn.call(targetNode, mutation, mutation.attributeName); break;
+                  default : fn.call(targetNode, mutation); break;
                 }
               } 
             }
